@@ -1,14 +1,10 @@
-FROM golang:alpine AS builder
-
-RUN apk update && \
-    apk add --no-cache git
+FROM golang AS builder
 
 WORKDIR $GOPATH/src/go/app/
 COPY . .
 
-RUN go get -d -v && \
-    go install -v && \
-    go build -o /go/bin/main main.go
+RUN go get .
+    RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /go/bin/main main.go
 
 FROM scratch
 COPY --from=builder /go/bin/main /go/bin/main
