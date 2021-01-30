@@ -17,8 +17,8 @@ Repositório para entrega do Desafio GO do curso Fullcycle da Code Education
 
 * Para executar rode os comandos abaixo:
 
-    docker pull fernandolerma/codeeducation:latest
-    docker build -t fernandolerma/codeeducation .
-    docker run -it --rm --name mygoapp fernandolerma/codeeducation
+    docker pull fernandolerma/codeeducation:latest  
+    docker build -t fernandolerma/codeeducation .  
+    docker run -it --rm --name mygoapp fernandolerma/codeeducation  
 
-    A mensagem 'Code.education Rocks!' deve ser apresentada
+    A mensagem 'Code.education Rocks!' deve ser apresentada  
